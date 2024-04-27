@@ -1,27 +1,25 @@
-def find_index_of_x(n, numbers, x):
-    for i in range(n):
-        if numbers[i] == x:
-            return i + 1
+def find_index_of_x(N, numbers, X):
+    for i in range(N):
+        if numbers[i] == X:
+            return i + 1  # Indexing starts from 1
     return -1
 
 def main():
-    # Get input N
-    n = int(input("Enter a positive integer N: "))
+    N = int(input("Enter the value of N (positive integer): "))
     
-    # Get N numbers from the user
     numbers = []
-    for i in range(n):
-        num = int(input(f"Enter number {i + 1}: "))
+    for i in range(N):
+        num = int(input("Enter number {}: ".format(i + 1)))
         numbers.append(num)
     
-    # Get input X
-    x = int(input("Enter an integer X: "))
+    X = int(input("Enter the value of X (integer): "))
     
-    # Find the index of X in the list of numbers
-    result = find_index_of_x(n, numbers, x)
+    index = find_index_of_x(N, numbers, X)
     
-    # Output the result
-    print(f"Result: {result}")
+    if index == -1:
+        print("-1")
+    else:
+        print("Index of {} is: {}".format(X, index))
 
 if __name__ == "__main__":
     main()
